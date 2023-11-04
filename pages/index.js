@@ -13,7 +13,7 @@ export default function Home() {
         <p>[This is a blog for fashion]</p>
         <p>
           (This is a sample website - you’ll be building a site like this on{' '}
-          <Link href="https://nextjs.org/learn">our Next.js tutorial</Link>.)
+          <Link href="https://nextjs.org/learn">Link</Link>.)
         </p>
       </section>
     </Layout>
