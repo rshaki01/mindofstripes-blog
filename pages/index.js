@@ -10,7 +10,7 @@ export default function Home() {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>[This is a blog for fashion]</p>
+        <p>[This is a blog for mindofstripes]</p>
         <p>
           (This is a sample website - you’ll be building a site like this on{' '}
           <Link href="https://nextjs.org/learn">Link</Link>.)
