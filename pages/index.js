@@ -26,7 +26,7 @@ export default function Home({allPostsData}) {
           <Link href="https://nextjs.org/learn">Link</Link>.)
         </p>
       </section>
-      
+
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
@@ -37,6 +37,7 @@ export default function Home({allPostsData}) {
               {id}
               <br />
               {date}
+
             </li>
           ))}
         </ul>
