@@ -39,6 +39,26 @@ export const post = {
       ]
     },
     {
+      name: 'photos',
+      title: 'Photos',
+      type: 'array',
+      of: [
+        {
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: 'alt',
+              type: 'string',
+              title: 'Alternative Text',
+            },
+          ],
+        },
+      ],
+    },
+    {
       name: 'categories',
       title: 'Categories',
       type: 'array',
@@ -54,6 +74,26 @@ export const post = {
       title: 'Body',
       type: 'blockContent',
     },
+    {
+  name: 'photos',
+  title: 'Photos',
+  type: 'array',
+  of: [
+    {
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Alternative Text',
+        },
+      ],
+    },
+  ],
+},
   ],
 
   preview: {
