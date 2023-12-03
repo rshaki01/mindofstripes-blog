@@ -74,26 +74,6 @@ export const post = {
       title: 'Body',
       type: 'blockContent',
     },
-    {
-  name: 'photos',
-  title: 'Photos',
-  type: 'array',
-  of: [
-    {
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        {
-          name: 'alt',
-          type: 'string',
-          title: 'Alternative Text',
-        },
-      ],
-    },
-  ],
-},
   ],
 
   preview: {
