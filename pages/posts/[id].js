@@ -24,7 +24,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Post({ postData }) {
-  console.log(postData)
+
   return (
     <Layout>
       <Head>
