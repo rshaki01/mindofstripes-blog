@@ -4,16 +4,32 @@ import Link from 'next/link';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
 
+// Define the URL of your Strapi API
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+// Fetch data from Strapi
+async function fetchStrapiData(endpoint) {
+  const res = await fetch('http://localhost:1337/api/posts');
+  const data = await res.json();
+  return data;
+}
+
+
 export async function getStaticProps() {
+  const allStrapiData = await fetchStrapiData('posts');
   const allPostsData = getSortedPostsData();
   return {
     props: {
       allPostsData,
+      allStrapiData
     },
   };
 }
 
-export default function Home({allPostsData}) {
+
+
+export default function Home({allPostsData, allStrapiData}) {
+  console.log(allStrapiData);
   return (
     <Layout home>
       <Head>
