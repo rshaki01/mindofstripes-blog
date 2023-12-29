@@ -3,20 +3,27 @@ import Layout, { siteTitle } from '../components/layout';
 import Link from 'next/link';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
+import axios from 'axios';
 
 // Define the URL of your Strapi API
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
+
+
 // Fetch data from Strapi
 async function fetchStrapiData(endpoint) {
-  const res = await fetch('http://localhost:1337/api/posts');
-  const data = await res.json();
-  return data;
+  try {
+    const response = await axios.get(`${API_URL}/${endpoint}`);
+    return response.data.data;
+  } catch (error) {
+    console.log("Error fetching data from Strapi:'", error);
+    return null;
+  }
 }
 
 
 export async function getStaticProps() {
-  const allStrapiData = await fetchStrapiData('posts');
+  const allStrapiData = await fetchStrapiData('api/restaurants');
   const allPostsData = getSortedPostsData();
   return {
     props: {
