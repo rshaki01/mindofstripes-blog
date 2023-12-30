@@ -2,38 +2,22 @@ import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
 import Link from 'next/link';
 import utilStyles from '../styles/utils.module.css';
-import { getSortedPostsData } from '../lib/posts';
+import { fetchStrapiData } from '../lib/posts';
 import axios from 'axios';
-
-// Define the URL of your Strapi API
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
-
-
-
-// Fetch data from Strapi
-async function fetchStrapiData(endpoint) {
-  try {
-    const response = await axios.get(`${API_URL}/${endpoint}`);
-    return response.data.data;
-  } catch (error) {
-    console.log("Error fetching data from Strapi:'", error);
-    return null;
-  }
-}
 
 
 export async function getStaticProps() {
   const allStrapiData = await fetchStrapiData('api/posts');
-  const allPostsData = getSortedPostsData();
+  // const allPostsData = getSortedPostsData();
   return {
     props: {
-      allPostsData,
+      // allPostsData,
       allStrapiData
     },
-  };
+  }
 }
 
-export default function Home({allPostsData, allStrapiData}) {
+export default function Home({allStrapiData}) {
   console.log(allStrapiData);
   return (
     <Layout home>
@@ -48,7 +32,8 @@ export default function Home({allPostsData, allStrapiData}) {
         </p>
       </section>
 
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+      {/* Generate a list of posts from markdown files */}
+      {/* <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
@@ -57,6 +42,21 @@ export default function Home({allPostsData, allStrapiData}) {
               <br />
               <small className={utilStyles.lightText}>
                 {date}
+              </small>
+          </li>
+          ))}
+        </ul>
+      </section> */}
+
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <ul className={utilStyles.list}>
+          {allStrapiData.map(({id, attributes}) => (
+            <li className={utilStyles.listItem} key={id}>
+              <Link href={`/posts/${id}`}>{attributes.Title}</Link>
+              <br />
+              <small className={utilStyles.lightText}>
+                {attributes.PublishedDate}
               </small>
           </li>
           ))}
