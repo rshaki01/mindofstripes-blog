@@ -19,8 +19,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-    console.log(params);
-    const strapiPostData = await fetchStrapiPostData('api/posts/1');
+    const strapiPostData = await fetchStrapiPostData(`api/posts/${params.id}`);
     return {
         props: {
         strapiPostData,
@@ -29,18 +28,20 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Post({ strapiPostData }) {
+  console.log(strapiPostData);
 
   return (
     <Layout>
       <Head>
-        <title></title>
+        <title>{strapiPostData.attributes.Title}</title>
       </Head>
       <article>
-        <h1 className={utilStyles.headingXl}></h1>
+        <h1 className={utilStyles.headingXl}>{strapiPostData.attributes.Title}</h1>
         <div className={utilStyles.lightText}>
-            
+        {strapiPostData.attributes.PublishedDate}
         </div>
-       
+        {/* <div dangerouslySetInnerHTML={{ __html: strapiPostData.attributes.Content}} /> */}
+        <p>{strapiPostData.attributes.Content}</p>
       </article>
     </Layout>
   );
