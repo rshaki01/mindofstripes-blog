@@ -23,7 +23,7 @@ async function fetchStrapiData(endpoint) {
 
 
 export async function getStaticProps() {
-  const allStrapiData = await fetchStrapiData('api/restaurants');
+  const allStrapiData = await fetchStrapiData('api/posts');
   const allPostsData = getSortedPostsData();
   return {
     props: {
@@ -32,8 +32,6 @@ export async function getStaticProps() {
     },
   };
 }
-
-
 
 export default function Home({allPostsData, allStrapiData}) {
   console.log(allStrapiData);
