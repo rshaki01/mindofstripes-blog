@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
 import Link from 'next/link';
 import utilStyles from '../styles/utils.module.css';
-import { fetchStrapiData } from '../lib/posts';
+import { fetchStrapiData, getAllStrapiPostIds } from '../lib/posts';
 import axios from 'axios';
 
 
@@ -18,7 +18,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({allStrapiData}) {
-  console.log(allStrapiData);
   return (
     <Layout home>
       <Head>

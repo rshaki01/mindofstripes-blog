@@ -1,5 +1,5 @@
 import Layout from '../../components/layout';
-import { getAllPostIds, getPostData, getStrapiPostData } from '../../lib/posts';
+import { getAllPostIds, getAllStrapiPostIds, getPostData, getStrapiPostData, fetchStrapiData, fetchStrapiPostData } from '../../lib/posts';
 import Head from 'next/head';
 import utilStyles from '../../styles/utils.module.css';
 
@@ -7,36 +7,40 @@ import utilStyles from '../../styles/utils.module.css';
 
 
 export async function getStaticPaths() {
-    const paths = getAllPostIds();
+    const allStrapiData = await fetchStrapiData('api/posts');
+    const paths = allStrapiData.map((post) => ({
+      params: {id: post.id.toString()}
+    }));
+
     return {
       paths,
-      fallback: false,
-    };
-  }
+      fallback: false
+    }
+}
 
 export async function getStaticProps({ params }) {
     console.log(params);
-    const postData = await getPostData(params.id);
+    const strapiPostData = await fetchStrapiPostData('api/posts/1');
     return {
         props: {
-        postData,
+        strapiPostData,
         },
     };
 }
 
-export default function Post({ postData }) {
+export default function Post({ strapiPostData }) {
 
   return (
     <Layout>
       <Head>
-        <title>{postData.title}</title>
+        <title></title>
       </Head>
       <article>
-        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
+        <h1 className={utilStyles.headingXl}></h1>
         <div className={utilStyles.lightText}>
-            {postData.date}
+            
         </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+       
       </article>
     </Layout>
   );
