@@ -8,14 +8,37 @@ export default function Home() {
       <Navbar />
       <div className="flex flex-col">
         {/* Featured Articles */}
-        <div className="flex gap-2 justify-center" >
+        <div className="w-[80vw] h-[60vh] mx-auto grid grid-cols-5" >
           <Image
            src="/images/Ken-Ijima-Header.jpeg"
            height={100}
            width={100}
            alt="Picture of Ken Ijima, founder of Vujade"
           />
-
+          <Image
+           src="/images/Ken-Ijima-Header.jpeg"
+           height={100}
+           width={100}
+           alt="Picture of Ken Ijima, founder of Vujade"
+          />
+          <Image
+           src="/images/Ken-Ijima-Header.jpeg"
+           height={100}
+           width={100}
+           alt="Picture of Ken Ijima, founder of Vujade"
+          />
+          <Image
+           src="/images/Ken-Ijima-Header.jpeg"
+           height={100}
+           width={100}
+           alt="Picture of Ken Ijima, founder of Vujade"
+          />
+          <Image
+           src="/images/Ken-Ijima-Header.jpeg"
+           height={100}
+           width={100}
+           alt="Picture of Ken Ijima, founder of Vujade"
+          />
         </div>
         <div className="flex justify-center">
             <a
