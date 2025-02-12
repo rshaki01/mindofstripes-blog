@@ -8,7 +8,7 @@ export default function Home() {
       <Navbar />
       <div className="flex flex-col">
         {/* Featured Articles */}
-        <div className="w-[80vw] h-[60vh] mx-auto grid grid-cols-5" >
+        <div className="w-[80vw] h-[60vh] mx-auto grid grid-cols-5 justify-items-center" >
           <Image
            src="/images/Ken-Ijima-Header.jpeg"
            height={100}
