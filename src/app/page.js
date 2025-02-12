@@ -13,7 +13,7 @@ export default function Home() {
            src="/images/Ken-Ijima-Header.jpeg"
            height={100}
            width={100}
-           alt="Picture of Ken Ijima, founder of Vujade"
+           alt="Picture of Ken, founder of Vujade"
           />
           <Image
            src="/images/Ken-Ijima-Header.jpeg"
