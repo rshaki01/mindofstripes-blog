@@ -8,37 +8,48 @@ export default function Home() {
       <Navbar />
       <div className="flex flex-col">
         {/* Featured Articles */}
-        <div className="w-[80vw] h-[60vh] mx-auto grid grid-cols-5 justify-items-center" >
-          <Image
-           src="/images/Ken-Ijima-Header.jpeg"
-           height={100}
-           width={100}
-           alt="Picture of Ken, founder of Vujade"
-          />
-          <Image
-           src="/images/Ken-Ijima-Header.jpeg"
-           height={100}
-           width={100}
-           alt="Picture of Ken Ijima, founder of Vujade"
-          />
-          <Image
-           src="/images/Ken-Ijima-Header.jpeg"
-           height={100}
-           width={100}
-           alt="Picture of Ken Ijima, founder of Vujade"
-          />
-          <Image
-           src="/images/Ken-Ijima-Header.jpeg"
-           height={100}
-           width={100}
-           alt="Picture of Ken Ijima, founder of Vujade"
-          />
-          <Image
-           src="/images/Ken-Ijima-Header.jpeg"
-           height={100}
-           width={100}
-           alt="Picture of Ken Ijima, founder of Vujade"
-          />
+        <div className="w-[80vw] h-[60vh] mx-auto grid grid-cols-5 justify-items-center relative" >
+          {/* objectFit ensures that image is cropped and maintains aspect ratio */}
+          <div className="relative h-full w-full"> 
+            <Image
+            src="/images/Ken-Ijima-Header.jpeg"
+            fill={true}
+            alt="Picture of Ken, founder of Vujade"
+            style={{ objectFit: "cover" }}
+            />
+          </div>
+          <div className="relative h-full w-full"> 
+            <Image
+            src="/images/Ken-Ijima-Header.jpeg"
+            fill={true}
+            alt="Picture of Ken, founder of Vujade"
+            style={{ objectFit: "cover" }}
+            />
+          </div>
+          <div className="relative h-full w-full"> 
+            <Image
+            src="/images/Ken-Ijima-Header.jpeg"
+            fill={true}
+            alt="Picture of Ken, founder of Vujade"
+            style={{ objectFit: "cover" }}
+            />
+          </div>
+          <div className="relative h-full w-full"> 
+            <Image
+            src="/images/Ken-Ijima-Header.jpeg"
+            fill={true}
+            alt="Picture of Ken, founder of Vujade"
+            style={{ objectFit: "cover" }}
+            />
+          </div>
+          <div className="relative h-full w-full"> 
+            <Image
+            src="/images/Ken-Ijima-Header.jpeg"
+            fill={true}
+            alt="Picture of Ken, founder of Vujade"
+            style={{ objectFit: "cover" }}
+            />
+          </div>
         </div>
         <div className="flex justify-center">
             <a
