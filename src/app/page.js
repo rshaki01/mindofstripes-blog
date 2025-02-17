@@ -10,7 +10,7 @@ export default function Home() {
         {/* Featured Articles */}
         <div className="w-[80vw] h-[55vh] mx-auto grid grid-cols-5 justify-items-center relative" >
           {/* objectFit ensures that image is cropped and maintains aspect ratio */}
-          <div className="relative h-full w-full"> 
+          <div className="relative h-full w-full transition-opacity duration-500 ease-in-out hover:opacity-75"> 
             <Image
             src="/images/Ken-Ijima-Header.jpeg"
             fill={true}
@@ -18,7 +18,7 @@ export default function Home() {
             style={{ objectFit: "cover" }}
             />
           </div>
-          <div className="relative h-full w-full"> 
+          <div className="relative h-full w-full transition-opacity duration-500 ease-in-out hover:opacity-75"> 
             <Image
             src="/images/Ken-Ijima-Header.jpeg"
             fill={true}
@@ -26,7 +26,7 @@ export default function Home() {
             style={{ objectFit: "cover" }}
             />
           </div>
-          <div className="relative h-full w-full"> 
+          <div className="relative h-full w-full transition-opacity duration-500 ease-in-out hover:opacity-75"> 
             <Image
             src="/images/Ken-Ijima-Header.jpeg"
             fill={true}
@@ -34,7 +34,7 @@ export default function Home() {
             style={{ objectFit: "cover" }}
             />
           </div>
-          <div className="relative h-full w-full"> 
+          <div className="relative h-full w-full transition-opacity duration-500 ease-in-out hover:opacity-75"> 
             <Image
             src="/images/Ken-Ijima-Header.jpeg"
             fill={true}
@@ -42,7 +42,7 @@ export default function Home() {
             style={{ objectFit: "cover" }}
             />
           </div>
-          <div className="relative h-full w-full"> 
+          <div className="relative h-full w-full transition-opacity duration-500 ease-in-out hover:opacity-75"> 
             <Image
             src="/images/Ken-Ijima-Header.jpeg"
             fill={true}
